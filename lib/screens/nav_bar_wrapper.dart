@@ -5,6 +5,7 @@ import 'package:events_app/screens/your_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
+import 'package:events_app/screens/chatPage.dart';
 
 class NavBarWrapper extends StatefulWidget {
   const NavBarWrapper({Key? key}) : super(key: key);
@@ -14,7 +15,6 @@ class NavBarWrapper extends StatefulWidget {
 }
 
 class _NavBarWrapperState extends State<NavBarWrapper> {
-
   int _bottomNavBarIndex = 0;
 
   @override
@@ -22,10 +22,10 @@ class _NavBarWrapperState extends State<NavBarWrapper> {
     super.initState();
   }
 
-  final List<Widget>_bottomNavBarPages = [
+  final List<Widget> _bottomNavBarPages = [
     const Home(),
     const Events(),
-    Container(),
+    const ChatPage(),
     const YourProfile(),
   ];
 
@@ -61,11 +61,15 @@ class _NavBarWrapperState extends State<NavBarWrapper> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              const SizedBox(width: 0,),
+              const SizedBox(
+                width: 0,
+              ),
               IconButton(
                 padding: const EdgeInsets.only(right: 15.0),
                 icon: Icon(
-                  _bottomNavBarIndex == 0 ? CupertinoIcons.house_fill : CupertinoIcons.house,
+                  _bottomNavBarIndex == 0
+                      ? CupertinoIcons.house_fill
+                      : CupertinoIcons.house,
                   color: const Color.fromRGBO(40, 40, 40, 1),
                   size: 30.0,
                 ),
@@ -78,7 +82,9 @@ class _NavBarWrapperState extends State<NavBarWrapper> {
                 children: [
                   IconButton(
                     icon: Icon(
-                      _bottomNavBarIndex == 1 ? CupertinoIcons.ticket_fill : CupertinoIcons.ticket,
+                      _bottomNavBarIndex == 1
+                          ? CupertinoIcons.ticket_fill
+                          : CupertinoIcons.ticket,
                       size: 30.0,
                       color: const Color.fromRGBO(40, 40, 40, 1),
                     ),
@@ -115,7 +121,9 @@ class _NavBarWrapperState extends State<NavBarWrapper> {
                   IconButton(
                     // padding: const EdgeInsets.only(left: 15.0),
                     icon: Icon(
-                      _bottomNavBarIndex == 2 ? CupertinoIcons.chat_bubble_fill : CupertinoIcons.chat_bubble,
+                      _bottomNavBarIndex == 2
+                          ? CupertinoIcons.chat_bubble_fill
+                          : CupertinoIcons.chat_bubble,
                       size: 30.0,
                       color: const Color.fromRGBO(40, 40, 40, 1),
                     ),
@@ -131,7 +139,9 @@ class _NavBarWrapperState extends State<NavBarWrapper> {
                   IconButton(
                     // padding: const EdgeInsets.only(left: 15.0),
                     icon: Icon(
-                      _bottomNavBarIndex == 3 ? CupertinoIcons.person_fill : CupertinoIcons.person,
+                      _bottomNavBarIndex == 3
+                          ? CupertinoIcons.person_fill
+                          : CupertinoIcons.person,
                       size: 30.0,
                       color: const Color.fromRGBO(40, 40, 40, 1),
                     ),
@@ -141,7 +151,9 @@ class _NavBarWrapperState extends State<NavBarWrapper> {
                   ),
                 ],
               ),
-              const SizedBox(width: 0,),
+              const SizedBox(
+                width: 0,
+              ),
             ],
           ),
         ),
