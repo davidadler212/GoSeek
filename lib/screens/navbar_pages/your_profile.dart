@@ -19,7 +19,7 @@ class YourProfile extends StatefulWidget {
 }
 
 class _YourProfileState extends State<YourProfile> {
-  bool editProfile = false;
+  bool _editProfile = false;
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class _YourProfileState extends State<YourProfile> {
                       onPressed: () {
                         HapticFeedback.heavyImpact();
                         setState(() {
-                          editProfile = !editProfile;
+                          _editProfile = !_editProfile;
                         });
                       },
                       child: Container(
@@ -85,7 +85,7 @@ class _YourProfileState extends State<YourProfile> {
                         ),
                         child: Center(
                           child: Text(
-                            editProfile ? "Save edits" : "Edit profile",
+                            _editProfile ? "Save edits" : "Edit profile",
                             style: const TextStyle(
                               fontSize: 14,
                               color: Color(0xff101010),
@@ -95,7 +95,7 @@ class _YourProfileState extends State<YourProfile> {
                         ),
                       ),
                     ),
-                    !editProfile ? const ShowYourProfileContents() : const EditYourProfileContents(),
+                    !_editProfile ? const ShowYourProfileContents() : const EditYourProfileContents(),
                   ],
                 )
             ),

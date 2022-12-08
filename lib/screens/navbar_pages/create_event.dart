@@ -8,7 +8,6 @@ import 'package:flutter_scale_tap/flutter_scale_tap.dart';
 import 'package:flutter_switch/flutter_switch.dart';
 import 'package:intl/intl.dart';
 
-
 DateTime currentDateTime = DateTime.now();
 
 String eventDescription = "";
@@ -52,12 +51,6 @@ class _CreateEventState extends State<CreateEvent> {
   void dispose() {
     priceFocusNode!.dispose();
     super.dispose();
-  }
-
-  void _focusOnPrice(){
-    setState(() {
-      FocusScope.of(context).requestFocus(priceFocusNode);
-    });
   }
 
   @override
@@ -208,9 +201,9 @@ class _CreateEventState extends State<CreateEvent> {
                   color: const Color(0xff101010),
                 ),
               ),
-              title: Transform(
-                transform:  Matrix4.translationValues(-70.0, 0.0, 0.0),
-                child: const Text(
+              title: const Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
                   'Host an event',
                   style: TextStyle(
                     fontSize: 22,
@@ -315,6 +308,9 @@ class _CreateEventState extends State<CreateEvent> {
                               maxLines: 10,
                               onChanged: (val) {
                                 eventDescription = val;
+                              },
+                              onFieldSubmitted: (val) {
+                                // gpt(eventDescription);
                               },
                               decoration: const InputDecoration(
                                 counterText: "",
@@ -823,9 +819,9 @@ class _CreateEventState extends State<CreateEvent> {
                 color: const Color(0xff101010),
               ),
             ),
-            title: Transform(
-              transform:  Matrix4.translationValues(-70.0, 0.0, 0.0),
-              child: const Text(
+            title: const Align(
+              alignment: Alignment.centerLeft,
+              child: Text(
                 'Host an event',
                 style: TextStyle(
                   fontSize: 22,

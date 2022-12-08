@@ -18,7 +18,6 @@ class _SettingsPageState extends State<SettingsPage> {
   void dispose() {
     nameTextFormFieldFocusNode.dispose();
     nameTextFormFieldController.dispose();
-
     super.dispose();
   }
 

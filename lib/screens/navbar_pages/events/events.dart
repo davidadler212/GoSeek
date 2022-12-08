@@ -1,6 +1,6 @@
-import 'package:events_app/screens/events/attending.dart';
-import 'package:events_app/screens/events/history.dart';
-import 'package:events_app/screens/events/hosting.dart';
+import 'package:events_app/screens/navbar_pages/events/attending.dart';
+import 'package:events_app/screens/navbar_pages/events/history.dart';
+import 'package:events_app/screens/navbar_pages/events/hosting.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

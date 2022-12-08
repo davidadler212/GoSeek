@@ -1,11 +1,11 @@
-import 'package:events_app/screens/create_event.dart';
-import 'package:events_app/screens/events/events.dart';
-import 'package:events_app/screens/home.dart';
-import 'package:events_app/screens/your_profile.dart';
+import 'package:events_app/screens/navbar_pages/create_event.dart';
+import 'package:events_app/screens/navbar_pages/events/events.dart';
+import 'package:events_app/screens/navbar_pages/home.dart';
+import 'package:events_app/screens/navbar_pages/your_profile.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_scale_tap/flutter_scale_tap.dart';
-import 'package:events_app/screens/chatPage.dart';
+import 'package:events_app/screens/navbar_pages/chat/messages.dart';
 
 class NavBarWrapper extends StatefulWidget {
   const NavBarWrapper({Key? key}) : super(key: key);
@@ -16,11 +16,6 @@ class NavBarWrapper extends StatefulWidget {
 
 class _NavBarWrapperState extends State<NavBarWrapper> {
   int _bottomNavBarIndex = 0;
-
-  @override
-  void initState() {
-    super.initState();
-  }
 
   final List<Widget> _bottomNavBarPages = [
     const Home(),
